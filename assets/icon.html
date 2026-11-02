@@ -1,0 +1,11 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+/* App icon / favicon source: black B on newsprint, solid red rule (thick enough to stay red at 16 px). Render at 512×512. */
+@font-face { font-family: 'Nameplate'; font-weight: 700; src: url('../public/fonts/nameplate.woff2') format('woff2'); }
+html, body { margin: 0; width: 512px; height: 512px; overflow: hidden; background: transparent; }
+.i { position: relative; width: 512px; height: 512px; border-radius: 96px; background: #f3eee3; display: grid; place-items: center; overflow: hidden; }
+.b { font: 700 400px/1 'Nameplate', serif; color: #121212; margin-top: -34px; }
+.r { position: absolute; left: 104px; right: 104px; bottom: 56px; height: 36px; background: #d0021b; }
+/* #small: favicon variant with a thicker bar on the 32 px grid (16 px = 1 px at 32), so it stays pure red. */
+.small .r { left: 96px; right: 96px; bottom: 48px; height: 64px; }
+</style></head><body><script>if (location.hash === '#small') document.documentElement.className = 'small'</script><div class="i"><span class="b">B</span><span class="r"></span></div></body></html>

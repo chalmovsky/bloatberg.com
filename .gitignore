@@ -1,0 +1,13 @@
+node_modules/
+.wrangler/
+.dev.vars
+dist/
+.DS_Store
+assets/art/build/
+
+# Local databases and snapshots (never commit)
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+.idea

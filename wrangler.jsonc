@@ -1,0 +1,33 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "bloatberg",
+  "main": "src/index.tsx",
+  "compatibility_date": "2026-10-30",
+  "workers_dev": false,
+  "preview_urls": false,
+  // The domain must be on this Cloudflare account (nameservers pointed at Cloudflare) before deploying.
+  "routes": [{ "pattern": "bloatberg.com", "custom_domain": true }],
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    // Let the Worker handle unmatched paths (so our styled 404 renders).
+    "not_found_handling": "none"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "bloatberg",
+      "database_id": "b98e1207-5851-4944-92d8-afc6e81c66ae",
+      "migrations_dir": "migrations",
+      // Only numbered files are migrations; seed.sql lives alongside but is never applied remotely.
+      "migrations_pattern": "migrations/[0-9][0-9][0-9][0-9]_*.sql"
+    }
+  ],
+  "r2_buckets": [{ "binding": "IMAGES", "bucket_name": "bloatberg-images" }],
+  // OWNER_EMAIL, ACCESS_TEAM_DOMAIN, ACCESS_AUD and IP_HASH_SALT are secrets: `bunx wrangler secret put <NAME>`.
+  // Until they're set, /admin answers 403 for everyone.
+  "vars": {
+    "ENVIRONMENT": "production",
+    "SITE_URL": "https://bloatberg.com"
+  }
+}

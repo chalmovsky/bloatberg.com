@@ -1,0 +1,5 @@
+ENVIRONMENT=development
+DEV_AUTH_EMAIL=you@example.com
+OWNER_EMAIL=you@example.com
+SITE_URL=http://localhost:8787
+IP_HASH_SALT=any-local-value
