@@ -1,7 +1,7 @@
 {
   "name": "Bloatberg",
   "short_name": "Bloatberg",
-  "description": "Technology, at scale.",
+  "description": "Mission-critical news.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

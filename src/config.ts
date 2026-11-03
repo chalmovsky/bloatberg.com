@@ -2,7 +2,7 @@
 export const site = {
   name: 'Bloatberg',
   newsletter: 'The Weekly Bloat',
-  tagline: 'Technology, at scale.',
+  tagline: 'Mission-critical news.',
   founded: 2026,
   description:
     'Bloatberg covers the companies, people and products shaping technology, from AI and startups to hardware, policy, culture and the visionaries behind it all.',
